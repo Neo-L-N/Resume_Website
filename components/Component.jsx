@@ -62,11 +62,12 @@ export default function Component() {
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
-                <p className="text-gray-500 mb-4">Description of Project 1</p>
+                <p className="text-gray-500 mb-4">A full-stack AI-powered finance application, enhancing user financial literacy and
+                management skills, using OpenAI, Next.JS, and Python.</p>
                 <div className="flex gap-2">
-                  <Badge>React</Badge>
-                  <Badge>TypeScript</Badge>
-                  <Badge>Tailwind CSS</Badge>
+                  <Badge>OpenAI</Badge>
+                  <Badge>Next.JS</Badge>
+                  <Badge>Python</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -75,12 +76,15 @@ export default function Component() {
                 <img src="/placeholder.svg" width={400} height={225} alt="Project 2" className="rounded-t-md" />
               </CardHeader>
               <CardContent className="p-4">
-                <h3 className="text-lg font-bold mb-2">Project 2</h3>
-                <p className="text-gray-500 mb-4">Description of Project 2</p>
+                <h3 className="text-lg font-bold mb-2">Financial Forecasting Tool</h3>
+                <p className="text-gray-500 mb-4">A multi-layer DNN model to predict future savings and provided key insights into financial trends.</p>
+                <p className="text-gray-500 mb-4">Visualized financial data through detailed reports and charts, highlighting accumulated savings and
+                monthly expenses breakdown, aiding in strategic financial planning.</p>
                 <div className="flex gap-2">
-                  <Badge>Node.js</Badge>
-                  <Badge>Express</Badge>
-                  <Badge>MongoDB</Badge>
+                  <Badge>Python</Badge>
+                  <Badge>Pandas</Badge>
+                  <Badge>Matplotlib</Badge>
+                  <Badge>TensorFlow</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -89,12 +93,14 @@ export default function Component() {
                 <img src="/placeholder.svg" width={400} height={225} alt="Project 3" className="rounded-t-md" />
               </CardHeader>
               <CardContent className="p-4">
-                <h3 className="text-lg font-bold mb-2">Project 3</h3>
-                <p className="text-gray-500 mb-4">Description of Project 3</p>
+                <h3 className="text-lg font-bold mb-2">Bookstore Restful API</h3>
+                <p className="text-gray-500 mb-4">Successfully led a team to design and implement a secure, RESTful Java-based API for an online
+                bookstore, integrating a MySQL backend for safe data handling.</p>
                 <div className="flex gap-2">
-                  <Badge>Vue.js</Badge>
-                  <Badge>Vuex</Badge>
-                  <Badge>Axios</Badge>
+                  <Badge>Java</Badge>
+                  <Badge>MySQL</Badge>
+                  <Badge>Spring boot</Badge>
+                  <Badge>Postman</Badge>
                 </div>
               </CardContent>
             </Card>
