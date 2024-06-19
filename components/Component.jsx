@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { Button } from './ui/button';
 import { Card, CardHeader, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -6,6 +7,33 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 export default function Component() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send(
+      'your_service_id', // Replace with your EmailJS service ID
+      'your_template_id', // Replace with your EmailJS template ID
+      formData,
+      'your_user_id' // Replace with your EmailJS user ID
+    ).then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    }, (error) => {
+      console.log('FAILED...', error);
+      alert('Failed to send message, please try again later.');
+    });
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-900 text-white py-4 px-6 md:px-8 flex items-center justify-between">
@@ -63,7 +91,7 @@ export default function Component() {
               <CardContent className="p-4">
                 <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
                 <p className="text-gray-500 mb-4">A full-stack AI-powered finance application, enhancing user financial literacy and
-                management skills, using OpenAI, Next.JS, and Python.</p>
+                  management skills, using OpenAI, Next.JS, and Python.</p>
                 <div className="flex gap-2">
                   <Badge>OpenAI</Badge>
                   <Badge>Next.JS</Badge>
@@ -79,7 +107,7 @@ export default function Component() {
                 <h3 className="text-lg font-bold mb-2">Financial Forecasting Tool</h3>
                 <p className="text-gray-500 mb-4">A multi-layer DNN model to predict future savings and provided key insights into financial trends.</p>
                 <p className="text-gray-500 mb-4">Visualized financial data through detailed reports and charts, highlighting accumulated savings and
-                monthly expenses breakdown, aiding in strategic financial planning.</p>
+                  monthly expenses breakdown, aiding in strategic financial planning.</p>
                 <div className="flex gap-2">
                   <Badge>Python</Badge>
                   <Badge>Pandas</Badge>
@@ -95,7 +123,7 @@ export default function Component() {
               <CardContent className="p-4">
                 <h3 className="text-lg font-bold mb-2">Bookstore Restful API</h3>
                 <p className="text-gray-500 mb-4">Successfully led a team to design and implement a secure, RESTful Java-based API for an online
-                bookstore, integrating a MySQL backend for safe data handling.</p>
+                  bookstore, integrating a MySQL backend for safe data handling.</p>
                 <div className="flex gap-2">
                   <Badge>Java</Badge>
                   <Badge>MySQL</Badge>
@@ -137,7 +165,7 @@ export default function Component() {
                   Elevated the understanding of foundational coding principles among over a dozen students, utilizing
                   effective communication and teaching methods.
                 </li>
-                
+
               </ul>
             </div>
             <div>
@@ -167,28 +195,30 @@ export default function Component() {
             <div>Java</div>
             <div>C</div>
             <div>Python</div>
+            <div>Bash</div>
+            <div>Linux</div>
           </div>
         </section>
         <section id="contact" className="bg-gray-900 text-white py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Get in Touch</h2>
-          <form className="max-w-md mx-auto">
+          <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
               </label>
-              <Input id="name" type="text" placeholder="Enter your name" className="w-full" />
+              <Input id="name" name="name" type="text" placeholder="Enter your name" value={formData.name} onChange={handleChange} className="w-full" required />
             </div>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium mb-1">
                 Email
               </label>
-              <Input id="email" type="email" placeholder="Enter your email" className="w-full" />
+              <Input id="email" name="email" type="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} className="w-full" required />
             </div>
             <div className="mb-6">
               <label htmlFor="message" className="block text-sm font-medium mb-1">
                 Message
               </label>
-              <Textarea id="message" rows={4} placeholder="Enter your message" className="w-full" />
+              <Textarea id="message" name="message" rows={4} placeholder="Enter your message" value={formData.message} onChange={handleChange} className="w-full" required />
             </div>
             <Button type="submit" className="w-full">
               Submit
@@ -259,4 +289,3 @@ function MenuIcon(props) {
     </svg>
   );
 }
-
