@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import { Button } from './ui/button';
 import { Card, CardHeader, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -7,33 +6,6 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 export default function Component() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.send(
-      'service_d0tv16x', // Replace with your EmailJS service ID
-      'template_wb4rmuf', // Replace with your EmailJS template ID
-      formData,
-      'your_user_id' // Replace with your EmailJS user ID
-    ).then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
-    }, (error) => {
-      console.log('FAILED...', error);
-      alert('Failed to send message, please try again later.');
-    });
-  };
-
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-900 text-white py-4 px-6 md:px-8 flex items-center justify-between">
@@ -165,7 +137,7 @@ export default function Component() {
                   Elevated the understanding of foundational coding principles among over a dozen students, utilizing
                   effective communication and teaching methods.
                 </li>
-
+                
               </ul>
             </div>
             <div>
@@ -201,24 +173,24 @@ export default function Component() {
         </section>
         <section id="contact" className="bg-gray-900 text-white py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Get in Touch</h2>
-          <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
+          <form className="max-w-md mx-auto" action="https://formsubmit.co/edmesag3@gmail.com" method="POST">
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
               </label>
-              <Input id="name" name="name" type="text" placeholder="Enter your name" value={formData.name} onChange={handleChange} className="w-full" required />
+              <Input id="name" name="name" type="text" placeholder="Enter your name" className="w-full" required />
             </div>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium mb-1">
                 Email
               </label>
-              <Input id="email" name="email" type="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} className="w-full" required />
+              <Input id="email" name="email" type="email" placeholder="Enter your email" className="w-full" required />
             </div>
             <div className="mb-6">
               <label htmlFor="message" className="block text-sm font-medium mb-1">
                 Message
               </label>
-              <Textarea id="message" name="message" rows={4} placeholder="Enter your message" value={formData.message} onChange={handleChange} className="w-full" required />
+              <Textarea id="message" name="message" rows={4} placeholder="Enter your message" className="w-full" required />
             </div>
             <Button type="submit" className="w-full">
               Submit
@@ -289,3 +261,4 @@ function MenuIcon(props) {
     </svg>
   );
 }
+
