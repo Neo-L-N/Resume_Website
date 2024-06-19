@@ -20,8 +20,8 @@ export default function Component() {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.send(
-      'your_service_id', // Replace with your EmailJS service ID
-      'your_template_id', // Replace with your EmailJS template ID
+      'service_d0tv16x', // Replace with your EmailJS service ID
+      'template_wb4rmuf', // Replace with your EmailJS template ID
       formData,
       'your_user_id' // Replace with your EmailJS user ID
     ).then((response) => {
