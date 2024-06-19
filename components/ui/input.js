@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Input = (props) => {
-  return <input {...props} className={`border p-2 rounded ${props.className}`} />;
+  return <input {...props} className={`border p-2 rounded text-black ${props.className}`} />;
 };
