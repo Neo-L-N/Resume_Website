@@ -6,6 +6,22 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 export default function Component() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    form.submit();
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-900 text-white py-4 px-6 md:px-8 flex items-center justify-between">
@@ -56,7 +72,7 @@ export default function Component() {
         <section id="projects" className="py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">My Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
+            <Card className="transition-transform transform hover:scale-105">
               <CardHeader>
                 <img src="/placeholder.svg" width={400} height={225} alt="Project 1" className="rounded-t-md" />
               </CardHeader>
@@ -71,7 +87,7 @@ export default function Component() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-transform transform hover:scale-105">
               <CardHeader>
                 <img src="/placeholder.svg" width={400} height={225} alt="Project 2" className="rounded-t-md" />
               </CardHeader>
@@ -88,7 +104,7 @@ export default function Component() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-transform transform hover:scale-105">
               <CardHeader>
                 <img src="/placeholder.svg" width={400} height={225} alt="Project 3" className="rounded-t-md" />
               </CardHeader>
@@ -137,7 +153,7 @@ export default function Component() {
                   Elevated the understanding of foundational coding principles among over a dozen students, utilizing
                   effective communication and teaching methods.
                 </li>
-                
+
               </ul>
             </div>
             <div>
@@ -173,7 +189,7 @@ export default function Component() {
         </section>
         <section id="contact" className="bg-gray-900 text-white py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Get in Touch</h2>
-          <form className="max-w-md mx-auto" action="https://formsubmit.co/edmesag3@gmail.com" method="POST">
+          <form className="max-w-md mx-auto" action="https://formsubmit.co/your-email@example.com" method="POST">
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
@@ -261,4 +277,3 @@ function MenuIcon(props) {
     </svg>
   );
 }
-
