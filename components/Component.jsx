@@ -74,12 +74,9 @@ export default function Component() {
         </section>
         <section id="projects" className="py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">My Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
-                <CardHeader>
-                  <img src="/placeholder.svg" width={400} height={225} alt="Project 1" className="rounded-t-md" />
-                </CardHeader>
                 <CardContent className="p-4">
                   <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
                   <p className="text-gray-500 mb-4">A full-stack AI-powered finance application, enhancing user financial literacy and
@@ -94,9 +91,6 @@ export default function Component() {
             </div>
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
-                <CardHeader>
-                  <img src="/placeholder.svg" width={400} height={225} alt="Project 2" className="rounded-t-md" />
-                </CardHeader>
                 <CardContent className="p-4">
                   <h3 className="text-lg font-bold mb-2">Financial Forecasting Tool</h3>
                   <p className="text-gray-500 mb-4">A multi-layer DNN model to predict future savings and provided key insights into financial trends.</p>
@@ -113,9 +107,6 @@ export default function Component() {
             </div>
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
-                <CardHeader>
-                  <img src="/placeholder.svg" width={400} height={225} alt="Project 3" className="rounded-t-md" />
-                </CardHeader>
                 <CardContent className="p-4">
                   <h3 className="text-lg font-bold mb-2">Bookstore Restful API</h3>
                   <p className="text-gray-500 mb-4">Successfully led a team to design and implement a secure, RESTful Java-based API for an online
@@ -297,11 +288,7 @@ function LaptopIcon(props) {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
     >
       <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
     </svg>
@@ -316,7 +303,8 @@ function LinkedinIcon(props) {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    >
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
@@ -329,7 +317,8 @@ function MailIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    >
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
@@ -341,7 +330,8 @@ function MenuIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    >
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
