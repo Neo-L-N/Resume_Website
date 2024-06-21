@@ -74,7 +74,7 @@ export default function Component() {
         </section>
         <section id="projects" className="py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">My Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
@@ -116,6 +116,19 @@ export default function Component() {
                     <Badge>MySQL</Badge>
                     <Badge>Spring boot</Badge>
                     <Badge>Postman</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="group">
+              <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-bold mb-2">Maze Puzzle</h3>
+                  <p className="text-gray-500 mb-4">Designed and implemented Breadth-First Search (BFS) to explore nodes layer by layer to find the shortest path in a maze.</p> 
+                  <p className="text-gray-500 mb-4">Developed Depth-First Search (DFS) to explore as far down a branch as possible before backtracking to ensure all nodes are covered.</p>
+                  <div className="flex gap-2">
+                    <Badge>Python</Badge>
+                    <Badge>Pygame</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -172,29 +185,10 @@ export default function Component() {
         <section id="skills" className="py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">My Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faReact} size="2x" />
-              <span>React</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faNodeJs} size="2x" />
-              <span>Node.js</span>
-            </div>
+            {/* Programming Languages */}
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faJs} size="2x" />
               <span>JavaScript</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faHtml5} size="2x" />
-              <span>HTML</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faCss3Alt} size="2x" />
-              <span>CSS</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faGitAlt} size="2x" />
-              <span>Git</span>
             </div>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faJava} size="2x" />
@@ -205,26 +199,66 @@ export default function Component() {
               <span>Python</span>
             </div>
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faDatabase} size="2x" />
-              <span>TypeScript</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faDatabase} size="2x" />
-              <span>Tailwind CSS</span>
-            </div>
-            <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faC} size="2x" />
               <span>C</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faHtml5} size="2x" />
+              <span>HTML</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faCss3Alt} size="2x" />
+              <span>CSS</span>
+            </div>
+            {/* Frameworks and Libraries */}
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faReact} size="2x" />
+              <span>React</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faNodeJs} size="2x" />
+              <span>Node.js</span>
+            </div>
+            {/* Tools */}
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faGitAlt} size="2x" />
+              <span>Git</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faLinux} size="2x" />
+              <span>Linux</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/394296/mysql.svg" alt="MySQL" className="w-8 h-8"/>
+              <span>MySQL</span>
             </div>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faCode} size="2x" />
               <span>Bash</span>
             </div>
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faLinux} size="2x" />
-              <span>Linux</span>
+              <img src="https://www.svgrepo.com/show/354113/nextjs-icon.svg" alt="NextJS" className="w-8 h-8" />
+              <span>NextJS</span>
+            </div>
+            {/* Other Skills */}
+            <div className="flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/333604/spring-boot.svg" alt="Spring Boot" className="w-8 h-8" />
+              <span>Spring boot</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/342128/postman.svg" alt="Postman" className="w-8 h-8" />
+              <span>Postman</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/473742/pandas.svg" alt="Pandas" className="w-8 h-8" />
+              <span>Pandas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/473805/tensorflow.svg" alt="TensorFlow" className="w-8 h-8" />
+              <span>TensorFlow</span>
             </div>
           </div>
+
         </section>
         <section id="contact" className="bg-gray-900 text-white py-12 md:py-20 px-6 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Get in Touch</h2>
@@ -285,11 +319,7 @@ function LaptopIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-    >
+      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
     </svg>
   )
@@ -299,12 +329,7 @@ function LinkedinIcon(props) {
   return (
     <svg
       {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-    >
+      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
@@ -316,9 +341,7 @@ function MailIcon(props) {
   return (
     <svg
       {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-    >
+      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
@@ -329,12 +352,11 @@ function MenuIcon(props) {
   return (
     <svg
       {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-    >
+      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
   )
 }
+
