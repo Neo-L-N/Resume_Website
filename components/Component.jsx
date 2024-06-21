@@ -33,16 +33,16 @@ export default function Component() {
           <h1 className="text-xl font-bold">Eduardo Mesa</h1>
         </div>
         <nav className="hidden md:flex items-center gap-4">
-          <a href="#" className="hover:underline underline-offset-4">
+          <a href="#projects" className="hover:underline underline-offset-4">
             Projects
           </a>
-          <a href="#" className="hover:underline underline-offset-4">
+          <a href="#experience" className="hover:underline underline-offset-4">
             Experience
           </a>
-          <a href="#" className="hover:underline underline-offset-4">
+          <a href="#skills" className="hover:underline underline-offset-4">
             Skills
           </a>
-          <a href="#" className="hover:underline underline-offset-4">
+          <a href="#contact" className="hover:underline underline-offset-4">
             Contact
           </a>
         </nav>
@@ -59,13 +59,13 @@ export default function Component() {
           <p className="text-lg md:text-xl mb-8">Explore my coding projects, work experience, and skills.</p>
           <div className="flex gap-4">
             <a
-              href="#"
+              href="#projects"
               className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
             >
               View Projects
             </a>
             <a
-              href="#"
+              href="#contact"
               className="inline-flex items-center justify-center rounded-md bg-transparent border border-white px-4 py-2 text-white hover:bg-white hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             >
               Contact Me
@@ -296,11 +296,9 @@ export default function Component() {
           <a href="https://www.linkedin.com/in/edmesag3/" target="_blank" className="hover:text-gray-400">
             <LinkedinIcon className="h-6 w-6" />
           </a>
-          <a href="#" className="hover:text-gray-400">
-            <MailIcon className="h-6 w-6" />
-          </a>
         </div>
       </footer>
+
     </div>
   );
 }
@@ -337,17 +335,6 @@ function LinkedinIcon(props) {
   )
 }
 
-function MailIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  )
-}
-
 function MenuIcon(props) {
   return (
     <svg
@@ -359,4 +346,3 @@ function MenuIcon(props) {
     </svg>
   )
 }
-
