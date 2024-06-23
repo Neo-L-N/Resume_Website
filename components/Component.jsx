@@ -78,7 +78,12 @@ export default function Component() {
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
+                    <a href="https://github.com/Neo-L-N" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
                   <p className="text-gray-500 mb-4">A full-stack AI-powered finance application, enhancing user financial literacy and
                     management skills, using OpenAI, Next.JS, and Python.</p>
                   <div className="flex gap-2">
@@ -92,7 +97,12 @@ export default function Component() {
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Financial Forecasting Tool</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">Budgeting Tool</h3>
+                    <a href="https://github.com/Neo-L-N/BudgetingTool" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
                   <p className="text-gray-500 mb-4">A multi-layer DNN model to predict future savings and provided key insights into financial trends.</p>
                   <p className="text-gray-500 mb-4">Visualized financial data through detailed reports and charts, highlighting accumulated savings and
                     monthly expenses breakdown, aiding in strategic financial planning.</p>
@@ -108,7 +118,12 @@ export default function Component() {
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Bookstore Restful API</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">Bookstore Restful API</h3>
+                    <a href="https://github.com/Neo-L-N/springboot.bookstoreApi" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
                   <p className="text-gray-500 mb-4">Successfully led a team to design and implement a secure, RESTful Java-based API for an online
                     bookstore, integrating a MySQL backend for safe data handling.</p>
                   <div className="flex gap-2">
@@ -123,7 +138,12 @@ export default function Component() {
             <div className="group">
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Maze Puzzle</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">Maze Puzzle</h3>
+                    <a href="https://github.com/Neo-L-N/maze_puzzle" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
                   <p className="text-gray-500 mb-4">Designed and implemented Breadth-First Search (BFS) to explore nodes layer by layer to find the shortest path in a maze.</p> 
                   <p className="text-gray-500 mb-4">Developed Depth-First Search (DFS) to explore as far down a branch as possible before backtracking to ensure all nodes are covered.</p>
                   <div className="flex gap-2">
