@@ -98,6 +98,50 @@ export default function Component() {
               <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">Stock Analyzer</h3>
+                    <a href="" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
+                  <p className="text-gray-500 mb-4">This project aims to predict stock prices using historical data of S&P 500 stocks.</p>
+                  <p className="text-gray-500 mb-4">The objective is to develop, train, and evaluate various machine learning models to forecast stock prices accurately. 
+                    The models used include Support Vector Regression (SVR), Random Forest, Long Short-Term Memory (LSTM), XGBoost, LightGBM, and CatBoost.</p>
+                  <div className="flex gap-2">
+                    <Badge>Python</Badge>
+                    <Badge>NumPy</Badge>
+                    <Badge>Pandas</Badge>
+                    <Badge>Matplotlib</Badge>
+                    <Badge>TensorFlow</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="group">
+              <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold mb-2">Dollars Secure Web</h3>
+                    <a href="" target="_blank" className="hover:text-gray-400">
+                    <GithubIcon className="h-6 w-6" />
+                    </a>
+                  </div>
+                  <p className="text-gray-500 mb-4">Dollars Secure Web is a web-based chat application designed to provide secure and real-time communication. </p>
+                  <p className="text-gray-500 mb-4"> Users can choose between public and private chat rooms, allowing for both open discussions and confidential conversations. 
+                  The application includes features such as user authentication, customizable avatars, and real-time messaging,</p>
+                  <div className="flex gap-2">
+                    <Badge>React</Badge>
+                    <Badge>Node.js</Badge>
+                    <Badge>Express.js</Badge>
+                    <Badge>Socket.IO</Badge>
+                    <Badge>Mongo.DB</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="group">
+              <Card className="transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold mb-2">Budgeting Tool</h3>
                     <a href="https://github.com/Neo-L-N/BudgetingTool" target="_blank" className="hover:text-gray-400">
                     <GithubIcon className="h-6 w-6" />
