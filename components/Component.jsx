@@ -80,14 +80,12 @@ export default function Component() {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold mb-2">InclusiFi</h3>
-                    <a href="https://github.com/Neo-L-N" target="_blank" className="hover:text-gray-400">
-                    <GithubIcon className="h-6 w-6" />
-                    </a>
                   </div>
                   <p className="text-gray-500 mb-4">A full-stack AI-powered finance application, enhancing user financial literacy and
                     management skills, using OpenAI, Next.JS, and Python.</p>
                   <div className="flex gap-2">
                     <Badge>OpenAI</Badge>
+                    <Badge>Ruby</Badge>
                     <Badge>Next.JS</Badge>
                     <Badge>Python</Badge>
                   </div>
@@ -99,14 +97,14 @@ export default function Component() {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold mb-2">Stock Analyzer</h3>
-                    <a href="" target="_blank" className="hover:text-gray-400">
+                    <a href="https://github.com/Neo-L-N/stocks_analyzer" target="_blank" className="hover:text-gray-400">
                     <GithubIcon className="h-6 w-6" />
                     </a>
                   </div>
                   <p className="text-gray-500 mb-4">This project aims to predict stock prices using historical data of S&P 500 stocks.</p>
                   <p className="text-gray-500 mb-4">The objective is to develop, train, and evaluate various machine learning models to forecast stock prices accurately. 
                     The models used include Support Vector Regression (SVR), Random Forest, Long Short-Term Memory (LSTM), XGBoost, LightGBM, and CatBoost.</p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Badge>Python</Badge>
                     <Badge>NumPy</Badge>
                     <Badge>Pandas</Badge>
@@ -121,9 +119,6 @@ export default function Component() {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold mb-2">Dollars Secure Web</h3>
-                    <a href="" target="_blank" className="hover:text-gray-400">
-                    <GithubIcon className="h-6 w-6" />
-                    </a>
                   </div>
                   <p className="text-gray-500 mb-4">Dollars Secure Web is a web-based chat application designed to provide secure and real-time communication. </p>
                   <p className="text-gray-500 mb-4"> Users can choose between public and private chat rooms, allowing for both open discussions and confidential conversations. 
@@ -133,7 +128,6 @@ export default function Component() {
                     <Badge>Node.js</Badge>
                     <Badge>Express.js</Badge>
                     <Badge>Socket.IO</Badge>
-                    <Badge>Mongo.DB</Badge>
                   </div>
                 </CardContent>
               </Card>
