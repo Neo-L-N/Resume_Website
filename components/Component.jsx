@@ -197,6 +197,18 @@ export default function Component() {
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Work Experience</h2>
           <div className="space-y-8">
             <div>
+              <h3 className="text-lg font-bold mb-2">Technology Analyst</h3>
+              <p className="text-gray-500 mb-2">
+                Accenture Federal Services (AFS) | Sep. 2025 – Present
+              </p>
+              <ul className="list-disc pl-6 text-gray-500">
+                <li>
+                  Delivered innovative technology solutions to federal clients in Data and AI space,
+                  enhancing operational efficiency and decision-making.
+                </li>
+              </ul>
+            </div>
+            <div>
               <h3 className="text-lg font-bold mb-2">Project Management Intern</h3>
               <p className="text-gray-500 mb-2">
                 National Nuclear Security Administration (NNSA) | Jun. 2023 – Aug. 2023
