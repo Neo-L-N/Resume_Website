@@ -5,17 +5,24 @@
     "main": "index.js",
     "scripts": {
         "start": "webpack serve --mode development",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "test:smoke": "node scripts/smoke-test.js",
+        "test:forms": "node scripts/forms-test.js",
+        "test": "npm run test:smoke && npm run test:forms"
     },
     "author": "Your Name",
     "license": "MIT",
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.5.2",
-        "@fortawesome/free-brands-svg-icons": "^6.5.2",
-        "@fortawesome/free-solid-svg-icons": "^6.5.2",
-        "@fortawesome/react-fontawesome": "^0.2.2",
+        "@radix-ui/react-dialog": "^1.1.6",
+        "@radix-ui/react-label": "^2.1.2",
+        "@radix-ui/react-slot": "^1.1.2",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.3.31",
+        "lucide-react": "^0.487.0",
         "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "react-dom": "^17.0.2",
+        "tailwind-merge": "^2.5.4"
     },
     "devDependencies": {
         "@babel/core": "^7.14.6",
