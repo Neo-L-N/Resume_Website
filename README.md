@@ -4,13 +4,14 @@ Modern single-page portfolio showcasing Eduardo Mesa’s experience, projects,
 Live site: https://eduardo-mesa-portfolio.onrender.com
 
 ## Tech Stack
-- React 17 + custom UI components
+- React 18 + custom UI components
 - Tailwind CSS
 - Webpack + Babel build pipeline
 - Radix UI primitives, Lucide icons, Framer Motion
 
 ## Getting Started
 ```bash
+npm run setup        # removes old deps + installs (Fedora helper)
 npm install           # install dependencies
 npm start             # run webpack-dev-server on http://localhost:9000
 ```

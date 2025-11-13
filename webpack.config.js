@@ -24,6 +24,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
+  performance: {
+    hints: 'warning',
+    maxEntrypointSize: 600000,
+    maxAssetSize: 600000,
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
