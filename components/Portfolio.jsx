@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -14,8 +14,7 @@ const projects = [
     tags: ['OpenAI', 'Next.JS', 'Python', 'Ruby'],
     outcome: 'Enhanced financial literacy through AI-powered insights and personalized recommendations',
     links: {
-      live: '#',
-      github: '#',
+      github: null,
     },
   },
   {
@@ -27,8 +26,7 @@ const projects = [
     tags: ['Python', 'TensorFlow', 'Pandas', 'NumPy'],
     outcome: 'Accurate stock price forecasting using multiple machine learning models',
     links: {
-      live: '#',
-      github: '#',
+      github: 'https://github.com/Neo-L-N/stocks_analyzer',
     },
   },
   {
@@ -40,8 +38,7 @@ const projects = [
     tags: ['React', 'Node.js', 'Express.js', 'Socket.IO'],
     outcome: 'Real-time secure messaging platform with public and private chat capabilities',
     links: {
-      live: '#',
-      github: '#',
+      github: 'https://github.com/Neo-L-N/Dollars-Secure-Web',
     },
   },
 ];
@@ -104,24 +101,7 @@ export function Portfolio({ isDark }) {
                   <span className={isDark ? 'text-purple-300' : 'text-purple-700'}>Outcome:</span> {project.outcome}
                 </p>
 
-                <div className="flex gap-2">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className={
-                        isDark
-                          ? 'bg-purple-900/30 border-purple-700/50 text-purple-200 hover:bg-purple-900/50'
-                          : 'bg-purple-100 border-purple-300 text-purple-800 hover:bg-purple-200'
-                      }
-                      asChild
-                    >
-                      <a href={project.links.live}>
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        View
-                      </a>
-                    </Button>
-                  </motion.div>
+                {project.links.github && (
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       variant="ghost"
@@ -129,13 +109,13 @@ export function Portfolio({ isDark }) {
                       className={isDark ? 'text-zinc-400 hover:text-purple-300' : 'text-zinc-600 hover:text-purple-700'}
                       asChild
                     >
-                      <a href={project.links.github}>
+                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-3 h-3 mr-1" />
                         Code
                       </a>
                     </Button>
                   </motion.div>
-                </div>
+                )}
               </div>
             </div>
           </motion.div>
