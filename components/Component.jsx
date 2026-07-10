@@ -10,10 +10,12 @@ import { Certifications } from './Certifications';
 import { Contact } from './Contact';
 import { LoadingScreen } from './LoadingScreen';
 import { ScrollToTop } from './ScrollToTop';
+import { inkTheme } from './design';
 
 export default function Component() {
   const [isDark, setIsDark] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const theme = inkTheme(isDark);
 
   return (
     <>
@@ -26,14 +28,10 @@ export default function Component() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className={
-            isDark
-              ? 'min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-zinc-100'
-              : 'min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-zinc-900'
-          }
+          className={theme.page}
         >
           <Header isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
-          <main className="max-w-4xl mx-auto px-6 py-12 space-y-16">
+          <main className="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
               <About isDark={isDark} />
             </motion.div>
@@ -56,9 +54,9 @@ export default function Component() {
               <Contact isDark={isDark} />
             </motion.div>
           </main>
-          <footer className={isDark ? 'border-t border-purple-800/30 py-8' : 'border-t border-purple-200 py-8'}>
-            <div className={isDark ? 'max-w-4xl mx-auto px-6 text-center text-zinc-400' : 'max-w-4xl mx-auto px-6 text-center text-zinc-500'}>
-              <p>© 2025 All rights reserved.</p>
+          <footer className={`relative z-[1] border-t py-8 ${theme.rule}`}>
+            <div className={`max-w-4xl mx-auto px-6 text-center ${theme.muted}`}>
+              <p>© 2026 All rights reserved.</p>
             </div>
           </footer>
           <ScrollToTop isDark={isDark} />

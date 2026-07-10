@@ -3,6 +3,7 @@ import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { inkTheme } from './design';
 
 const projects = [
   {
@@ -44,15 +45,11 @@ const projects = [
 ];
 
 export function Portfolio({ isDark }) {
+  const theme = inkTheme(isDark);
+
   return (
     <section>
-      <h2
-        className={
-          isDark
-            ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 pb-2 border-b border-purple-800/30 text-2xl'
-            : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-6 pb-2 border-b border-purple-200 text-2xl'
-        }
-      >
+      <h2 className={theme.heading}>
         Portfolio
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -63,42 +60,33 @@ export function Portfolio({ isDark }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -8 }}
-            className={
-              isDark
-                ? 'rounded-lg overflow-hidden bg-slate-900/50 border border-purple-800/30 backdrop-blur-sm'
-                : 'rounded-lg overflow-hidden bg-white border border-purple-200 shadow-sm'
-            }
+            className={`overflow-hidden ${theme.card}`}
           >
             <div className="relative overflow-hidden h-48">
               <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
-                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <ImageWithFallback src={project.image} alt={project.title} className="w-full h-48 object-cover grayscale contrast-125" />
               </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             </div>
 
             <div className="p-5 space-y-3">
-              <h3 className={isDark ? 'text-purple-300' : 'text-purple-700'}>{project.title}</h3>
-              <p className={isDark ? 'text-zinc-400 text-sm' : 'text-zinc-600 text-sm'}>{project.description}</p>
+              <h3 className={theme.subheading}>{project.title}</h3>
+              <p className={`text-sm ${theme.muted}`}>{project.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={
-                      isDark
-                        ? 'text-xs px-2 py-1 rounded-full bg-purple-900/30 text-purple-200 border border-purple-700/50'
-                        : 'text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800 border border-purple-300'
-                    }
+                    className={`text-xs px-2 py-1 ${theme.chip}`}
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className={isDark ? 'pt-3 border-t border-purple-800/30' : 'pt-3 border-t border-purple-200'}>
-                <p className={isDark ? 'text-xs text-zinc-400 mb-3' : 'text-xs text-zinc-600 mb-3'}>
-                  <span className={isDark ? 'text-purple-300' : 'text-purple-700'}>Outcome:</span> {project.outcome}
+              <div className={`pt-3 border-t ${theme.rule}`}>
+                <p className={`text-xs mb-3 ${theme.muted}`}>
+                  <span className={theme.accent}>Outcome:</span> {project.outcome}
                 </p>
 
                 {project.links.github && (
@@ -106,7 +94,7 @@ export function Portfolio({ isDark }) {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className={isDark ? 'text-zinc-400 hover:text-purple-300' : 'text-zinc-600 hover:text-purple-700'}
+                      className={theme.button}
                       asChild
                     >
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer">

@@ -7,24 +7,20 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { FORM_ENDPOINT } from './constants';
+import { inkTheme } from './design';
 
 export function Contact({ isDark }) {
   const [open, setOpen] = useState(false);
+  const theme = inkTheme(isDark);
 
   return (
     <section id="contact">
-      <h2
-        className={
-          isDark
-            ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 pb-2 border-b border-purple-800/30 text-2xl'
-            : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-6 pb-2 border-b border-purple-200 text-2xl'
-        }
-      >
+      <h2 className={theme.heading}>
         Get in Touch
       </h2>
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-4">
-          <p className={isDark ? 'text-zinc-300' : 'text-zinc-700'}>
+          <p className={theme.body}>
             I&apos;m always interested in hearing about new opportunities and collaborations. Feel free to reach out through the form or any of the quick contact options.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -33,21 +29,17 @@ export function Contact({ isDark }) {
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     variant="outline"
-                    className={
-                      isDark
-                        ? 'bg-purple-900/30 border-purple-700/50 text-purple-200 hover:bg-purple-900/50 hover:text-purple-100'
-                        : 'bg-purple-100 border-purple-300 text-purple-800 hover:bg-purple-200 hover:text-purple-900'
-                    }
+                    className={theme.button}
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     Email Me
                   </Button>
                 </motion.div>
               </DialogTrigger>
-              <DialogContent className={isDark ? 'bg-slate-900 border-purple-800/50' : 'bg-white border-purple-200'}>
+              <DialogContent className={theme.dialog}>
                 <DialogHeader>
-                  <DialogTitle className={isDark ? 'text-purple-300' : 'text-purple-800'}>Send me a message</DialogTitle>
-                  <DialogDescription className={isDark ? 'text-zinc-400' : 'text-zinc-600'}>
+                  <DialogTitle className={theme.subheading}>Send me a message</DialogTitle>
+                  <DialogDescription className={theme.muted}>
                     Fill out the form below and I&apos;ll get back to you as soon as possible.
                   </DialogDescription>
                 </DialogHeader>
@@ -56,37 +48,30 @@ export function Contact({ isDark }) {
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_captcha" value="false" />
                   <div className="space-y-2">
-                    <Label htmlFor="contact-name" className={isDark ? 'text-zinc-300' : 'text-zinc-700'}>
+                    <Label htmlFor="contact-name" className={theme.body}>
                       Name
                     </Label>
-                    <Input id="contact-name" name="name" className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-200' : 'bg-white border-purple-200'} required />
+                    <Input id="contact-name" name="name" className={theme.input} required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="contact-email" className={isDark ? 'text-zinc-300' : 'text-zinc-700'}>
+                    <Label htmlFor="contact-email" className={theme.body}>
                       Email
                     </Label>
-                    <Input id="contact-email" type="email" name="email" className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-200' : 'bg-white border-purple-200'} required />
+                    <Input id="contact-email" type="email" name="email" className={theme.input} required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="contact-message" className={isDark ? 'text-zinc-300' : 'text-zinc-700'}>
+                    <Label htmlFor="contact-message" className={theme.body}>
                       Message
                     </Label>
                     <Textarea
                       id="contact-message"
                       name="message"
-                      className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-200 min-h-[120px]' : 'bg-white border-purple-200 min-h-[120px]'}
+                      className={`${theme.input} min-h-[120px]`}
                       required
                     />
                   </div>
                   <DialogFooter>
-                    <Button
-                      type="submit"
-                      className={
-                        isDark
-                          ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
-                          : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white'
-                      }
-                    >
+                    <Button type="submit" className={theme.primaryButton}>
                       Send Message
                     </Button>
                   </DialogFooter>
@@ -96,11 +81,7 @@ export function Contact({ isDark }) {
             <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
-                className={
-                  isDark
-                    ? 'bg-purple-900/30 border-purple-700/50 text-purple-200 hover:bg-purple-900/50 hover:text-purple-100'
-                    : 'bg-purple-100 border-purple-300 text-purple-800 hover:bg-purple-200 hover:text-purple-900'
-                }
+                className={theme.button}
                 asChild
               >
                 <a href="https://www.linkedin.com/in/edmesag3" target="_blank" rel="noopener noreferrer">
@@ -112,11 +93,7 @@ export function Contact({ isDark }) {
             <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
-                className={
-                  isDark
-                    ? 'bg-purple-900/30 border-purple-700/50 text-purple-200 hover:bg-purple-900/50 hover:text-purple-100'
-                    : 'bg-purple-100 border-purple-300 text-purple-800 hover:bg-purple-200 hover:text-purple-900'
-                }
+                className={theme.button}
                 asChild
               >
                 <a href="https://github.com/Neo-L-N" target="_blank" rel="noopener noreferrer">
@@ -131,29 +108,25 @@ export function Contact({ isDark }) {
         <form
           action={FORM_ENDPOINT}
           method="POST"
-          className={
-            isDark
-              ? 'rounded-xl border border-purple-800/40 bg-slate-900/60 p-6 space-y-4 shadow-lg shadow-purple-900/20'
-              : 'rounded-xl border border-purple-200 bg-white/80 p-6 space-y-4 shadow-lg shadow-purple-100'
-          }
+          className={`p-6 space-y-4 ${theme.card}`}
         >
           <input type="hidden" name="_subject" value="Portfolio Message (Primary Form)" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <div className="space-y-2">
-            <Label htmlFor="contact-inline-name" className={isDark ? 'text-zinc-200' : 'text-zinc-800'}>
+            <Label htmlFor="contact-inline-name" className={theme.strong}>
               Name
             </Label>
             <Input
               id="contact-inline-name"
               name="name"
               placeholder="Jane Doe"
-              className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-100' : 'bg-white border-purple-200'}
+              className={theme.input}
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="contact-inline-email" className={isDark ? 'text-zinc-200' : 'text-zinc-800'}>
+            <Label htmlFor="contact-inline-email" className={theme.strong}>
               Email
             </Label>
             <Input
@@ -161,30 +134,23 @@ export function Contact({ isDark }) {
               type="email"
               name="email"
               placeholder="you@email.com"
-              className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-100' : 'bg-white border-purple-200'}
+              className={theme.input}
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="contact-inline-message" className={isDark ? 'text-zinc-200' : 'text-zinc-800'}>
+            <Label htmlFor="contact-inline-message" className={theme.strong}>
               Message
             </Label>
             <Textarea
               id="contact-inline-message"
               name="message"
               placeholder="Tell me about your project or idea..."
-              className={isDark ? 'bg-slate-800 border-purple-700/50 text-zinc-100 min-h-[140px]' : 'bg-white border-purple-200 min-h-[140px]'}
+              className={`${theme.input} min-h-[140px]`}
               required
             />
           </div>
-          <Button
-            type="submit"
-            className={
-              isDark
-                ? 'w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
-                : 'w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white'
-            }
-          >
+          <Button type="submit" className={`w-full ${theme.primaryButton}`}>
             Send Message
           </Button>
         </form>

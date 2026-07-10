@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from './ui/badge';
+import { inkTheme } from './design';
 
 const skillCategories = [
   {
@@ -10,26 +11,27 @@ const skillCategories = [
   },
   {
     id: 2,
-    category: 'Frameworks & Libraries',
-    skills: ['React', 'Node.js', 'Next.JS', 'Spring Boot', 'Express.js', 'Socket.IO', 'TensorFlow', 'Pandas'],
+    category: 'Cloud & AI Platforms',
+    skills: ['AWS', 'S3', 'Glue', 'Lambda', 'SageMaker', 'EMR', 'QuickSight', 'OpenAI'],
   },
   {
     id: 3,
+    category: 'Frameworks & Libraries',
+    skills: ['React', 'Node.js', 'Next.JS', 'Spring Boot', 'Express.js', 'Socket.IO', 'TensorFlow', 'Pandas', 'NumPy'],
+  },
+  {
+    id: 4,
     category: 'Tools & Technologies',
-    skills: ['Git', 'Linux', 'MySQL', 'Postman', 'NumPy', 'Matplotlib', 'Pygame', 'OpenAI'],
+    skills: ['Git', 'Linux', 'MySQL', 'Postman', 'Matplotlib', 'Pygame', 'Data Analytics', 'Machine Learning'],
   },
 ];
 
 export function Skills({ isDark }) {
+  const theme = inkTheme(isDark);
+
   return (
     <section>
-      <h2
-        className={
-          isDark
-            ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 pb-2 border-b border-purple-800/30 text-2xl'
-            : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-6 pb-2 border-b border-purple-200 text-2xl'
-        }
-      >
+      <h2 className={theme.heading}>
         Skills
       </h2>
       <div className="space-y-6">
@@ -41,7 +43,7 @@ export function Skills({ isDark }) {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
           >
-            <h3 className={isDark ? 'text-purple-300 mb-3' : 'text-purple-700 mb-3'}>{category.category}</h3>
+            <h3 className={`mb-3 ${theme.subheading}`}>{category.category}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
@@ -50,16 +52,12 @@ export function Skills({ isDark }) {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
-                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  whileHover={{ scale: 1.06, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Badge
                     variant="secondary"
-                    className={
-                      isDark
-                        ? 'bg-purple-900/30 text-purple-200 hover:bg-purple-900/50 border-purple-700/50'
-                        : 'bg-purple-100 text-purple-800 hover:bg-purple-200 border-purple-300'
-                    }
+                    className={theme.chip}
                   >
                     {skill}
                   </Badge>

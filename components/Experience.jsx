@@ -1,6 +1,7 @@
 import React from 'react';
 import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { inkTheme } from './design';
 
 const experiences = [
   {
@@ -8,10 +9,12 @@ const experiences = [
     title: 'Technology Analyst',
     company: 'Accenture Federal Services (AFS)',
     period: 'Sep. 2025 - Present',
-    description: 'Delivering innovative technology solutions to federal clients in Data and AI space',
+    description: 'Delivering cloud-based Data and AI solutions for federal clients within AWS environments',
     achievements: [
-      'Enhanced operational efficiency and decision-making through advanced analytics',
-      'Collaborated with cross-functional teams on complex federal projects',
+      'Worked across AWS services including S3, Glue, Lambda, SageMaker, EMR, and QuickSight to support data engineering, analytics, and machine learning workflows',
+      'Built and maintained data pipelines using S3 for storage and AWS Glue for data cataloging, transformation, and ETL processing',
+      'Supported model development and analytics use cases with SageMaker, EMR-based processing, and QuickSight dashboards for stakeholder reporting',
+      'Collaborated with cross-functional teams to deliver secure, scalable cloud solutions for complex federal projects',
     ],
   },
   {
@@ -53,18 +56,14 @@ const experiences = [
 ];
 
 export function Experience({ isDark }) {
+  const theme = inkTheme(isDark);
+
   return (
     <section>
-      <h2
-        className={
-          isDark
-            ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 pb-2 border-b border-purple-800/30 text-2xl'
-            : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-6 pb-2 border-b border-purple-200 text-2xl'
-        }
-      >
+      <h2 className={theme.heading}>
         Experience
       </h2>
-      <div className="space-y-8">
+      <div className="space-y-8 border-l border-current/20 pl-4">
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.id}
@@ -73,37 +72,32 @@ export function Experience({ isDark }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ x: 5 }}
           >
             <motion.div
-              className={
-                isDark
-                  ? 'absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center'
-                  : 'absolute left-0 top-1 w-6 h-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center'
-              }
+              className={`absolute -left-[29px] top-1 w-7 h-7 rounded-full border flex items-center justify-center ${theme.timelineDot}`}
               whileHover={{ scale: 1.2, rotate: 360 }}
               transition={{ duration: 0.3 }}
             >
-              <Briefcase className="w-3 h-3 text-white" />
+              <Briefcase className="w-3.5 h-3.5" />
             </motion.div>
             <div className="space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                <h3 className={isDark ? 'text-purple-300' : 'text-purple-700'}>{exp.title}</h3>
-                <span className={isDark ? 'text-sm text-zinc-400' : 'text-sm text-zinc-500'}>{exp.period}</span>
+                <h3 className={theme.subheading}>{exp.title}</h3>
+                <span className={`text-sm ${theme.muted}`}>{exp.period}</span>
               </div>
-              <p className={isDark ? 'text-zinc-300' : 'text-zinc-800'}>{exp.company}</p>
-              <p className={isDark ? 'text-zinc-400 text-sm' : 'text-zinc-600 text-sm'}>{exp.description}</p>
+              <p className={theme.strong}>{exp.company}</p>
+              <p className={`text-sm ${theme.muted}`}>{exp.description}</p>
               <ul className="space-y-1 mt-3">
                 {exp.achievements.map((achievement, achievementIndex) => (
                   <motion.li
                     key={achievement}
-                    className={isDark ? 'text-zinc-300 text-sm flex gap-2' : 'text-zinc-700 text-sm flex gap-2'}
+                    className={`text-sm flex gap-2 ${theme.body}`}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: achievementIndex * 0.1 }}
                   >
-                    <span className={isDark ? 'text-purple-400' : 'text-purple-500'}>•</span>
+                    <span className={theme.accent}>•</span>
                     <span>{achievement}</span>
                   </motion.li>
                 ))}

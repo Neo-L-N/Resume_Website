@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import { Button } from './ui/button';
+import { inkTheme } from './design';
 
 export function ScrollToTop({ isDark }) {
   const [isVisible, setIsVisible] = useState(false);
+  const theme = inkTheme(isDark);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -27,11 +29,7 @@ export function ScrollToTop({ isDark }) {
             <Button
               onClick={scrollToTop}
               size="icon"
-              className={
-                isDark
-                  ? 'w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg shadow-purple-500/50'
-                  : 'w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white shadow-lg shadow-purple-400/50'
-              }
+              className={`w-12 h-12 rounded-full shadow-lg ${theme.primaryButton}`}
             >
               <ArrowUp className="w-5 h-5" />
               <span className="sr-only">Scroll to top</span>
