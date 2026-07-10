@@ -26,7 +26,7 @@ const experiences = [
     achievements: [
       'Spearheaded the creation of a project proposal, securing thousands in budget funds through comprehensive research and strategic planning',
       "Enhanced global radiological threat countermeasures by collaborating with cross-cultural teams on impactful international projects",
-      "Advanced NNSA's diplomatic initiatives by participating in meetings with foreign dignitaries across Europe, Asia, and Latin America",
+      "Advanced NNSA's security initiatives by participating in meetings with foreign teams across Europe, Asia, and Latin America",
     ],
   },
   {

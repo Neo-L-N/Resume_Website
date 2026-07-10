@@ -13,7 +13,7 @@ const FORM_ENDPOINT = 'action={FORM_ENDPOINT}';
 const HIDDEN_FIELDS = ['name="_subject"', 'name="_template"', 'name="_captcha"'];
 
 const targets = [
-  { file: 'components/Contact.jsx', label: 'Contact section forms', expectMultiple: true },
+  { file: 'components/Contact.jsx', label: 'Contact section form', expectMultiple: false },
   { file: 'components/Header.jsx', label: 'Header dialog form', expectMultiple: false },
 ];
 

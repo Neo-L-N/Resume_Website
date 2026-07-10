@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from './Header';
 import { About } from './About';
@@ -16,6 +16,17 @@ export default function Component() {
   const [isDark, setIsDark] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const theme = inkTheme(isDark);
+
+  useEffect(() => {
+    const background = isDark ? '#181818' : '#ffffff';
+    document.documentElement.style.backgroundColor = background;
+    document.body.style.backgroundColor = background;
+
+    const root = document.getElementById('root');
+    if (root) {
+      root.style.backgroundColor = background;
+    }
+  }, [isDark]);
 
   return (
     <>
